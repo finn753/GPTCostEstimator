@@ -27,6 +27,7 @@
   "dependencies": {
     "bits-ui": "^0.20.0",
     "clsx": "^2.1.0",
+    "gpt-tokenizer": "^2.1.2",
     "lucide-svelte": "^0.359.0",
     "mode-watcher": "^0.3.0",
     "svelte-sonner": "^0.3.19",

@@ -1,7 +1,15 @@
-import { type ClassValue, clsx } from "clsx";
-import { twMerge } from "tailwind-merge";
-import { cubicOut } from "svelte/easing";
-import type { TransitionConfig } from "svelte/transition";
+import {type ClassValue, clsx} from "clsx";
+import {twMerge} from "tailwind-merge";
+import {cubicOut} from "svelte/easing";
+import type {TransitionConfig} from "svelte/transition";
+
+export function getMonthIndex(date: Date): number {
+    return date.getFullYear() * 12 + date.getMonth();
+}
+
+export function getMonthFromIndex(index: number): number {
+    return index % 12;
+}
 
 export function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs));
@@ -30,9 +38,7 @@ export const flyAndScale = (
         const [minB, maxB] = scaleB;
 
         const percentage = (valueA - minA) / (maxA - minA);
-        const valueB = percentage * (maxB - minB) + minB;
-
-        return valueB;
+        return percentage * (maxB - minB) + minB;
     };
 
     const styleToString = (

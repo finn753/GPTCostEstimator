@@ -7,6 +7,15 @@ declare global {
 		// interface PageData {}
 		// interface PageState {}
 		// interface Platform {}
+		interface HTMLInputElement {
+			webkitdirectory: any;
+		}
+	}
+}
+
+declare namespace svelteHTML {
+	interface HTMLAttributes<T> {
+		webkitdirectory?: boolean;
 	}
 }
 
